@@ -209,6 +209,7 @@ lineMaster = []
 for line in [textline.upper() for textline in text]:
     lineSlave = []
     for l in line:
+        assert l in letters.keys(), 'Text contains an invalid character. Use standard letters and spaces only, no punctuation.'
         lineSlave.append(letters[l])
         lineSlave.append(letters['betweenChars'])
     wholeLine = np.hstack(lineSlave)
